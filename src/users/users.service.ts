@@ -17,6 +17,15 @@ export class UsersService {
     });
   }
 
+  public getByEmail(
+    email: User['email'],
+  ): Promise<(User & { password: Password }) | null> {
+    return this.prismaService.user.findUnique({
+      where: { email },
+      include: { password: true },
+    });
+  }
+
   public async create(
     userData: Omit<User, 'id' | 'role'>,
     password: Password['hashedPassword'],
