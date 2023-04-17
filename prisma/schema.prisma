@@ -19,11 +19,13 @@ model User {
   id String @id @default(uuid())
   email String @unique
   role Role @default(USER)
+  password Password?
 }
 
 model Password {
   id String @id @default(uuid())
   hashedPassword String
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade )
   userId String @unique
 }
 
@@ -34,11 +36,13 @@ model Product {
   description String
   price Int
   oldPrice Int?
+  gallery Imgs[]
   image String
 }
 
 model Imgs {
   id String @id @default(uuid())
   image String
+  product Product @relation(fields: [productId], references: [id])
   productId String
 }
