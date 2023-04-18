@@ -1,5 +1,6 @@
 const initialState = {
-    tables: []
+    products: [],
+    user: null,
 }
 
 export default initialState;
