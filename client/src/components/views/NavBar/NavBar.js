@@ -1,8 +1,12 @@
 import { Navbar, NavbarBrand, Nav } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import styles from './NavBar.module.scss';
+import { useSelector } from "react-redux";
+import { getUser } from "../../../redux/usersRedux";
 
 const NavBar = () => {
+
+    const user = useSelector(getUser);
 
     return (
         <Navbar bg="dark" variant="dark" expand="lg" className="mb-4 d-flex justify-content-between">
@@ -20,40 +24,40 @@ const NavBar = () => {
                         </NavLink>
                     </li>
                     <li>
-
-                        <NavLink
-                            className={({ isActive }) =>
-                                isActive ? styles.linkActive : undefined
-                            }
-                            to="/login"
-                        >
-                            Sign in
-                        </NavLink>
-
+                        {!user && (
+                            <NavLink
+                                className={({ isActive }) =>
+                                    isActive ? styles.linkActive : undefined
+                                }
+                                to="/login"
+                            >
+                                Sign in
+                            </NavLink>
+                        )}
                     </li>
                     <li>
-
-                        <NavLink
-                            className={({ isActive }) =>
-                                isActive ? styles.linkActive : undefined
-                            }
-                            to="/register"
-                        >
-                            Register
-                        </NavLink>
-
+                        {!user && (
+                            <NavLink
+                                className={({ isActive }) =>
+                                    isActive ? styles.linkActive : undefined
+                                }
+                                to="/register"
+                            >
+                                Register
+                            </NavLink>
+                        )}
                     </li>
                     <li>
-
-                        <NavLink
-                            className={({ isActive }) =>
-                                isActive ? styles.linkActive : undefined
-                            }
-                            to="/logout"
-                        >
-                            Logout
-                        </NavLink>
-
+                        {user && (
+                            <NavLink
+                                className={({ isActive }) =>
+                                    isActive ? styles.linkActive : undefined
+                                }
+                                to="/logout"
+                            >
+                                Logout
+                            </NavLink>
+                        )}
                     </li>
                 </ul>
             </Nav>
