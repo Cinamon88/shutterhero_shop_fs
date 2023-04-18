@@ -13,7 +13,7 @@ export class AuthService {
     private configService: ConfigService,
   ) {}
 
-  public async register(registrationData: RegisterDTO) {
+  async register(registrationData: RegisterDTO) {
     const hashedPassword = await bcrypt.hash(registrationData.password, 10);
     const userData = {
       email: registrationData.email,
