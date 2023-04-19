@@ -1,11 +1,13 @@
-import CompanyClaim from '../../common/TopClaim/TopClaim';
+import TopClaim from '../../common/TopClaim/TopClaim';
+import Carousel from '../../features/Carousel/CarouselSlide';
 import NavBar from '../NavBar/NavBar'
 
 const Header = () => {
   return (
     <>
     <NavBar />
-    <CompanyClaim />
+    <TopClaim />
+    <Carousel />
     </>
   );
 };

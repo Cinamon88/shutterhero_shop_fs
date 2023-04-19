@@ -5,7 +5,7 @@ import { faMobileAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons
 import { Link } from 'react-router-dom';
 
 
-const CompanyClaim = () => (
+const TopClaim = () => (
   <div className={styles.root}>
     <div class="container">
         <div class="row align-items-center">
@@ -37,4 +37,4 @@ const CompanyClaim = () => (
   </div>
 );
 
-export default CompanyClaim;
+export default TopClaim;
