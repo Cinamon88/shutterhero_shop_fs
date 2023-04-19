@@ -9,7 +9,7 @@ const NavBar = () => {
     const user = useSelector(getUser);
 
     return (
-        <Navbar bg="dark" variant="dark" expand="lg" className="mb-4 d-flex justify-content-between">
+        <Navbar bg="dark" variant="dark" expand="lg" className="d-flex justify-content-between">
             <NavbarBrand className="justify-content-start px-3">ShutterHero</NavbarBrand>
             <Nav className="flex-sm-column flex-md-row px-3">
                 <ul className={styles.nav_links}>

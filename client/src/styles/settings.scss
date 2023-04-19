@@ -13,3 +13,115 @@ $main-font: 'Poppins', sans-serif;
 $radius: 5px;
 $base-size: 12px;
 $transition: all 0.5s;
+
+$darkGray: #2a2a2a;
+$red: #fa434f;
+$gray: #363636;
+$white: #fff;
+$darkerGray: #292929;
+$lighterGray: #434343;
+$lightestGray: #676767;
+$veryLightGray: #dfdfdf;
+$projectGold: #d58e32;
+$projectGoldLight: #d8ae77;
+$projectGoldDark: #d47f10;
+$elementGrayLight: #b6b6b6;
+$veryLightOrange: #faebd7;
+$errorMsg: red;
+$googleRed: #de5246;
+$facebookBlue: #4267B2;
+$twitterBlue:  #1DA1F2;
+$pinterestRed: #E60023;
+$linkedinBlue: #0A66C2;
+$youtubeRed: #FF0000;
+// PLEASE DON"T USE VARIABLES ABOVE!
+
+$base-padding: 24px;
+
+$header-topbar-bg: $lighterGray;
+$header-bg: $white;
+
+$footer-claim-bg: $darkGray;
+$footer-bg: $gray;
+
+$primary: $red;
+
+$text-color: $darkGray;
+
+$form-border-color: $darkerGray;
+
+$brands-color: $veryLightGray;
+
+$login-main-color: $projectGold;
+$login-main-light: $projectGoldLight;
+$login-main-dark: $projectGoldDark;
+$blog-text-color: $lighterGray;
+
+$banner-group-bg: $gray;
+$banner-bottom: $elementGrayLight;
+
+$register-btn-color-primary: $primary;
+$register-btn-color-secondary: $white;
+$register-btn-color-tertiary: $projectGoldDark;
+$register-input-color-primary: $darkerGray;
+
+$modal-popup-primary: $primary;
+$modal-popup-secondary: $veryLightGray;
+$modal-popup-tertiary: $veryLightGray;
+$modal-popup-quaternary: $veryLightOrange;
+
+$product-page-gray: $lightestGray;
+
+$googleIconColor: $googleRed;
+$facebookIconColor: $facebookBlue;
+$twitterIconColor: $twitterBlue;
+$pinterestIconColor: $pinterestRed;
+$linkedinIconColor: $linkedinBlue;
+$youtubeIconColor: $youtubeRed;
+$productSectionBorder: $veryLightGray;
+
+$blog-white: $white;
+
+// Edit animation duration below:
+
+$duration: 2s;
+
+// Animation data - DO NOT EDIT
+$bounce: bounce $duration ease 0s 1 normal forwards;
+$blink: blink $duration ease 0s 1 normal forwards;
+
+@keyframes bounce {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+
+// Choose animation below
+
+$animation: $bounce;
+
+$fade-time: 500ms;
+
+:export {
+  fadeTime: $fade-time;
+}
