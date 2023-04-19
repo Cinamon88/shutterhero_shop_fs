@@ -16,13 +16,13 @@ const CompanyClaim = () => (
                 </p>
             </div>
             <div className="col-6 col-md-4 text-center">
-                <a href='#'>
+                <a href='/'>
                     <img src='/images/logo.png' alt='ShutterHero' />
                 </a>
             </div>
             <div className={`col-6 col-md-4 text-center ${styles.cart}`}>
                 <Link to={`/cart`}>
-                    <a href='#' className={styles.cartBox}>
+                    <a href='/' className={styles.cartBox}>
                         <div className={styles.cartIcon}>
                             <FontAwesomeIcon className={styles.icon} icon={faShoppingBasket} />
                         </div>
@@ -38,33 +38,3 @@ const CompanyClaim = () => (
 );
 
 export default CompanyClaim;
-
-
-/* <div className='container'>
-      <div className='row'>
-        <div className={`col ${styles.phoneNumber}`}>
-          <p>
-            <FontAwesomeIcon className={styles.icon} icon={faMobileAlt} /> 692 712 014
-          </p>
-        </div>
-        <Link to={`/cart`}>
-          {
-            <div className={`col ${styles.cart}`}>
-              <a href='#' className={styles.cartBox}>
-                <div className={styles.cartIcon}>
-                  <FontAwesomeIcon className={styles.icon} icon={faShoppingBasket} />
-                </div>
-                <div className={styles.cartCounter}>123</div>
-              </a>
-            </div>
-          }
-        </Link>
-        <div className='col'>
-          <a href='#'>
-            <img src='/images/logo.png' alt='ShutterHero' />
-          </a>
-        </div>
-        
-      </div>
-    </div>
-*/
