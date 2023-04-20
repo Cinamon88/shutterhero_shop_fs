@@ -1,0 +1,34 @@
+@import '../../../styles/global.scss';
+
+.orderform {
+  margin: 46px 0;
+  color: $text-color;
+
+
+  .title {
+    margin-bottom: 25px;
+  }
+
+  .form {
+    margin-bottom: 10px;
+  }
+
+  .info {
+    border: 1px solid $text-color;
+    padding: 15px;
+
+    p,
+    h4,
+    h3 {
+      margin-top: 5px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid $text-color;
+    }
+
+    div {
+      p {
+        border: none;
+      }
+    }
+  }
+}
