@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 
 const Cart = () => {
   const [cartData, setCartData] = useState(useSelector(getCart));
+  // eslint-disable-next-line no-unused-vars
   const [user, setUser] = useState(
     JSON.parse(localStorage.getItem('user')) || 0,
   );
@@ -20,6 +21,7 @@ const Cart = () => {
   };
   function getTotalPrice() {
     let totalPrice = 0;
+    // eslint-disable-next-line array-callback-return
     cartData.map((product) => {
       totalPrice = totalPrice + product.productData.price * product.value;
     });
@@ -59,7 +61,7 @@ const Cart = () => {
                       <td className="col-2 py-5">{product.productData.name}</td>
                       <td className="col-1 py-5 px-4">{product.value}</td>
                       <td className="col-1 py-5">
-                        {product.productData.price * product.value}$
+                        {product.productData.price * product.value}£
                       </td>
                       <td className="col-2 py-5">
                         {product.comment.length > 0 ? (
@@ -88,7 +90,7 @@ const Cart = () => {
         ) : (
           <Col className={styles.summary} lg={3}>
             <h3>Summary</h3>
-            <h5>Total price: {getTotalPrice()}$</h5>
+            <h5>Total price: {getTotalPrice()}£</h5>
             {user ? (
               <Link className={styles.link} to="/order">
                 <Button
