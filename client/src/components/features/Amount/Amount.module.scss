@@ -1,0 +1,26 @@
+@import '../../../styles/global.scss';
+
+h4 {
+  color: $text-color;
+  margin-right: 10px;
+}
+
+.amount {
+  background-color: $background;
+
+  Button {
+    border: none;
+    border: 1px solid $text-color;
+    font-weight: bold;
+
+    &:hover {
+      background-color: $text-color;
+    }
+  }
+  .input {
+    background-color: $background;
+    border: none;
+    width: 50px;
+    border: 1px solid $text-color;
+  }
+}
