@@ -52,7 +52,7 @@ const Cart = () => {
                       <td>
                         <img
                           src={`../images/products/${product.productData.image}`}
-                          alt="boots"
+                          alt="cameras"
                           className={'d-block ' + styles.left_image}
                         />
                       </td>
@@ -97,7 +97,7 @@ const Cart = () => {
                   size="lg"
                   className="mx-3 my-4 "
                 >
-                  Submit Order
+                  Order
                 </Button>
               </Link>
             ) : (

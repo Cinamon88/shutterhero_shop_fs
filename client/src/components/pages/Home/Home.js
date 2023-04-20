@@ -1,5 +1,5 @@
 import CarouselSlide from "../../features/Carousel/CarouselSlide";
-import Products from "../Products/Products";
+import Products from "../Products/ProductsContainer";
 
 const Home = () => {
     return (
