@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { Alert, Button, Form, Spinner } from 'react-bootstrap';
 import { API_URL } from '../../../config';
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
-  const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState(null);
+
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -16,20 +18,24 @@ const Register = () => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ username: login, password: password, email: email }),
+      body: JSON.stringify({ password: password, email: email }),
     };
 
     setStatus('loading');
-    fetch(`${API_URL}auth/register`, options).then((res) => {
+    fetch(`${API_URL}/auth/register`, options).then((res) => {
       if (res.status === 201) {
         setStatus('success');
       } else if (res.status === 400) {
         setStatus('clientError');
       } else if (res.status === 409) {
-        setStatus('loginError');
+        setStatus('emailError');
       } else {
         setStatus('serverError');
       }
+      setStatus('success');
+      setTimeout(() => {
+        navigate('/login');
+      }, 3000);
     });
   };
 
@@ -57,10 +63,10 @@ const Register = () => {
       </Alert>
     )}
 
-    {status === 'loginError' && (
+    {status === 'emailError' && (
       <Alert variant='warning'>
-        <Alert.Heading>Login already in use</Alert.Heading>
-        <p>You have to use other login.</p>
+        <Alert.Heading>Email already in use</Alert.Heading>
+        <p>You have to use other email.</p>
       </Alert>
     )}
 
@@ -70,13 +76,13 @@ const Register = () => {
       </Spinner>
     )}
 
-    <Form.Group className='mb-3' controlId='formLogin'>
-      <Form.Label>Login</Form.Label>
+    <Form.Group className='mb-3' controlId='formemail'>
+      <Form.Label>Email address</Form.Label>
       <Form.Control
-        type='text'
-        value={login}
-        onChange={(e) => setLogin(e.target.value)}
-        placeholder='Enter login'
+        type='email'
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        placeholder='Email'
       />
     </Form.Group>
 
@@ -87,16 +93,6 @@ const Register = () => {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         placeholder='Password'
-      />
-    </Form.Group>
-
-    <Form.Group className='mb-3' controlId='formemail'>
-      <Form.Label>Email address</Form.Label>
-      <Form.Control
-        type='email'
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder='Email'
       />
     </Form.Group>
 
