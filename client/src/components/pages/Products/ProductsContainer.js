@@ -10,9 +10,10 @@ import {
 import styles from './ProductsContainer.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
 
-const Products = () => {
+const ProductsContainer = () => {
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => fetchData(), []);
 
   function fetchData() {
@@ -20,7 +21,7 @@ const Products = () => {
     fetch(`${API_URL}/product`)
       .then((res) => res.json())
       .then(async (products) => {
-        await dispatch(updateProducts(products));
+        dispatch(updateProducts(products));
         setLoading(false);
       });
   }
@@ -60,4 +61,4 @@ const Products = () => {
     );
 };
 
-export default Products;
+export default ProductsContainer;
