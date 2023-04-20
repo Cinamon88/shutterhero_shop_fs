@@ -22,7 +22,7 @@ const Amount = (props) => {
 
   return (
     <div className="d-flex flex-row">
-      <h4>Amount:</h4>
+      <h4>Amount: </h4>
       <div className={'d-flex ' + styles.amount}>
         <Button
           onClick={() => {
