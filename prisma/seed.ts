@@ -91,7 +91,7 @@ function getProduct() {
                 '',
             price: 500,
             oldPrice: 1000,
-            image: 'accessory1.jpg',
+            image: 'accessory3.jpg',
         },
     ];
 }
