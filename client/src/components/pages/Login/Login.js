@@ -28,7 +28,7 @@ const Login = () => {
       body: JSON.stringify({ login, password }),
     };
     setStatus('loading');
-    fetch(`${API_URL}auth/login`, options)
+    fetch(`${API_URL}/auth/login/`, options)
       .then((res) => {
         if (res.status === 200) {
           setStatus('success');
@@ -49,7 +49,7 @@ const Login = () => {
 
   return (
     <Form className='col-12 col-sm-3 mx-auto mt-3' onSubmit={handleSubmit}>
-      <h1 className='my-4'>Sign up</h1>
+      <h1 className='my-4'>Sign in</h1>
     
       {status === 'success' && (
         <Alert variant='success'>
