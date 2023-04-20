@@ -7,16 +7,36 @@ import Register from "./components/pages/Register/Register";
 import Login from "./components/pages/Login/Login";
 import NotFound from "./components/pages/NotFound/NotFound";
 import Cart from "./components/features/Cart/Cart";
-import Products from "./components/pages/Products/Products";
+import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addCart } from './redux/cartRedux';
+import ProductPage from './components/common/ProductPage/ProductPage'
 
 const App = () => {
+  const [cartData, setcartData] = useState(
+    JSON.parse(localStorage.getItem('cart')) || 0,
+  );
+  const [user, setUser] = useState(
+    JSON.parse(localStorage.getItem('user')) || 0,
+  );
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (cartData.length > 0) {
+      cartData.map((i) => {
+        dispatch(addCart(i));
+      });
+    }
+  }, [cartData]);
+
   return (
     <main>
       <Header />
       <Container>
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/products' element={<Products />} />
+          <Route path='/product/:id' element={<ProductPage />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
