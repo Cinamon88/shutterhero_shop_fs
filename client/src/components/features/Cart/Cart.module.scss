@@ -1,0 +1,45 @@
+@import '../../../styles/global.scss';
+
+.cart {
+  padding: 35px 0;
+
+  .left_image {
+    width: 120px;
+    height: 120px;
+  }
+
+  .button {
+    border-radius: 50%;
+    background-color: red;
+    border: none;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .icon {
+      color: white;
+      font-size: 40px;
+    }
+  }
+
+  .summary {
+    color: $text-color;
+    height: auto;
+    border: 1px solid $text-color;
+
+    p {
+      padding: 20px;
+    }
+
+    h3 {
+      padding: 20px;
+      border-bottom: 1px solid $text-color;
+    }
+    h5 {
+      padding: 20px;
+      border-bottom: 1px solid $text-color;
+    }
+  }
+}

@@ -3,10 +3,12 @@ import thunk from 'redux-thunk';
 import initialState from './initialState';
 import usersReducer from './usersRedux';
 import productsReducer from './productsRedux';
+import cartReducer from './cartRedux';
 
 const subreducers = {
   user: usersReducer,
   products: productsReducer,
+  cart: cartReducer,
 }
 
 const reducer = combineReducers(subreducers);
