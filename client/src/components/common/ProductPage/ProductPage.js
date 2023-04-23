@@ -102,15 +102,17 @@ const ProductPage = () => {
             <h1>{productData.name}</h1>
             {productData.oldPrice > 0 ? (
               <span>
-                <span className={styles.new_price}>${productData.price}</span>
+                <span className={styles.new_price}>£{productData.price}</span>
                 <span className={styles.old_price}>
-                  ${productData.oldPrice}
+                  £{productData.oldPrice}
                 </span>
               </span>
             ) : (
-              <span className={styles.regular_price}>${productData.price}</span>
+              <span className={styles.regular_price}>£{productData.price}</span>
             )}
-            <div>{productData.description}</div>
+            <div>
+              <span className={'col-6 col-lg-6 mb-6' + styles.description}>{productData.description}</span>
+            </div>
             <Amount onClick={changeAmount} />
             <div>
               <textarea

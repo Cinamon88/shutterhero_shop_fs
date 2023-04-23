@@ -35,7 +35,7 @@ let AuthService = class AuthService {
     async register(registrationData) {
         const hashedPassword = await bcrypt.hash(registrationData.password, 10);
         const userData = {
-            email: registrationData.email,
+            email: registrationData.username,
         };
         return this.usersService.create(userData, hashedPassword);
     }

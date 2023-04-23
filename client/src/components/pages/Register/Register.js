@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
   const [password, setPassword] = useState('');
-  const [email, setEmail] = useState('');
+  const [login, setLogin] = useState('');
   const [status, setStatus] = useState(null);
 
   const navigate = useNavigate();
@@ -18,7 +18,7 @@ const Register = () => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ password: password, email: email }),
+      body: JSON.stringify({ username: login, password: password  }),
     };
 
     setStatus('loading');
@@ -76,12 +76,12 @@ const Register = () => {
       </Spinner>
     )}
 
-    <Form.Group className='mb-3' controlId='formemail'>
+    <Form.Group className='mb-3' controlId='formLogin'>
       <Form.Label>Email address</Form.Label>
       <Form.Control
-        type='email'
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        type='login'
+        value={login}
+        onChange={(e) => setLogin(e.target.value)}
         placeholder='Email'
       />
     </Form.Group>

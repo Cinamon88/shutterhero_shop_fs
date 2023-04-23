@@ -1,7 +1,5 @@
 // selectors
 export const getUser = ({ user }) => user;
-export const getUserByLogin = ({ user }, login) =>
-  user.find((user) => user.login === login);
 
 // actions
 const createActionName = (actionName) => `app/users/${actionName}`;
