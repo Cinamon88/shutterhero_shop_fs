@@ -9,7 +9,7 @@ function getProduct() {
             id: 'fd77c655-f154-4163-b18b-324e78100a01',
             name: 'Camera',
             category: 'Cameras',
-            description: '',
+            description: 'Camera, in photography, device for recording an image of an object on a light-sensitive surface.',
             price: 3000,
             oldPrice: 4000,
             image: 'camera1.jpg',
@@ -18,7 +18,7 @@ function getProduct() {
             id: 'fd77c655-f154-4163-b18b-324e78100a02',
             name: 'Camera',
             category: 'Cameras',
-            description: '',
+            description: 'Camera, in photography, device for recording an image of an object on a light-sensitive surface.',
             price: 4000,
             oldPrice: 5000,
             image: 'camera2.jpg',
@@ -27,8 +27,7 @@ function getProduct() {
             id: 'fd77c655-f154-4163-b18b-324e78100a03',
             name: 'Camera',
             category: 'Cameras',
-            description:
-                '',
+            description: 'Camera, in photography, device for recording an image of an object on a light-sensitive surface.',
             price: 2000,
             oldPrice: 3000,
             image: 'camera3.jpg',
@@ -38,7 +37,7 @@ function getProduct() {
             name: 'Lens',
             category: 'Lenses',
             description:
-                '',
+                'A lens is a tool used to bring light to a fixed focal point.',
             price: 1000,
             oldPrice: 1500,
             image: 'lens1.jpg',
@@ -48,7 +47,7 @@ function getProduct() {
             name: 'Lens',
             category: 'Lenses',
             description:
-                '',
+                'A lens is a tool used to bring light to a fixed focal point.',
             price: 500,
             oldPrice: 1000,
             image: 'lens2.jpg',
@@ -58,7 +57,7 @@ function getProduct() {
             name: 'Lens',
             category: 'Lenses',
             description:
-                '',
+                'A lens is a tool used to bring light to a fixed focal point.',
             price: 500,
             oldPrice: 1000,
             image: 'lens3.jpg',
@@ -68,7 +67,7 @@ function getProduct() {
             name: 'Accessory',
             category: 'Accessories',
             description:
-                '',
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
             price: 500,
             oldPrice: 1000,
             image: 'accessory1.jpg',
@@ -78,7 +77,7 @@ function getProduct() {
             name: 'Accessory',
             category: 'Accessories',
             description:
-                '',
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
             price: 500,
             oldPrice: 1000,
             image: 'accessory2.jpg',
@@ -88,7 +87,7 @@ function getProduct() {
             name: 'Accessory',
             category: 'Accessories',
             description:
-                '',
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
             price: 500,
             oldPrice: 1000,
             image: 'accessory3.jpg',

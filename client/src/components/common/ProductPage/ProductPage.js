@@ -110,7 +110,7 @@ const ProductPage = () => {
             ) : (
               <span className={styles.regular_price}>${productData.price}</span>
             )}
-           
+            <div>{productData.description}</div>
             <Amount onClick={changeAmount} />
             <div>
               <textarea
