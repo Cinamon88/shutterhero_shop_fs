@@ -22,7 +22,7 @@ import * as cors from 'cors';
       isGlobal: true,
     }),
     ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', 'client', 'build'),
+      rootPath: join(__dirname, '../../', 'client', 'build'),
     }),
   ],
   controllers: [AppController],

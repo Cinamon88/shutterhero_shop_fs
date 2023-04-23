@@ -14,7 +14,7 @@ async function bootstrap() {
     app.use(cookieParser());
     const prismaService = app.get(prisma_service_1.PrismaService);
     await prismaService.enableShutdownHooks(app);
-    await app.listen(process.env.PORT || 8000);
+    await app.listen(process.env.PORT || 3000);
 }
 bootstrap();
 //# sourceMappingURL=main.js.map

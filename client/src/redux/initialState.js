@@ -1,7 +1,8 @@
 const initialState = {
     products: [],
-    user: null,
+    users: null,
     cart: [],
+    order: [],
 }
 
 export default initialState;

@@ -39,7 +39,7 @@ AppModule = __decorate([
                 isGlobal: true,
             }),
             serve_static_1.ServeStaticModule.forRoot({
-                rootPath: (0, path_1.join)(__dirname, '..', 'client', 'build'),
+                rootPath: (0, path_1.join)(__dirname, '../../', 'client', 'build'),
             }),
         ],
         controllers: [app_controller_1.AppController],
