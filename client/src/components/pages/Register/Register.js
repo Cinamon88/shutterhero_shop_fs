@@ -5,7 +5,8 @@ import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
   const [password, setPassword] = useState('');
-  const [login, setLogin] = useState('');
+  const [passwordRepeat, setPasswordRepeat] = useState('');
+  const [email, setEmail] = useState('');
   const [status, setStatus] = useState(null);
 
   const navigate = useNavigate();
@@ -18,7 +19,7 @@ const Register = () => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ username: login, password: password  }),
+      body: JSON.stringify({ email: email, password: password, passwordRepeat: passwordRepeat  }),
     };
 
     setStatus('loading');
@@ -80,8 +81,8 @@ const Register = () => {
       <Form.Label>Email address</Form.Label>
       <Form.Control
         type='login'
-        value={login}
-        onChange={(e) => setLogin(e.target.value)}
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
         placeholder='Email'
       />
     </Form.Group>
@@ -93,6 +94,16 @@ const Register = () => {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         placeholder='Password'
+      />
+    </Form.Group>
+
+    <Form.Group className='mb-3' controlId='formPasswordRepeat'>
+      <Form.Label>Confirm Password</Form.Label>
+      <Form.Control
+        type='password'
+        value={passwordRepeat}
+        onChange={(e) => setPasswordRepeat(e.target.value)}
+        placeholder='Confirm Password'
       />
     </Form.Group>
 
