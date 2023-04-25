@@ -3,9 +3,6 @@ import styles from './TopClaim.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMobileAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { getUser } from '../../../redux/usersRedux';
-
 
 const TopClaim = () => {
 
