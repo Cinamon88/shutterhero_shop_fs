@@ -10,7 +10,7 @@ import { logIn } from '../../../redux/usersRedux';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-  const [login, setLogin] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [status, setStatus] = useState(null); // null, 'loading, 'success', 'serverError', 'clientError'
   const dispatch = useDispatch();
@@ -21,22 +21,30 @@ const Login = () => {
 
     const options = {
       method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include',
+      body: JSON.stringify({ email, password }),
     };
     
     setStatus('loading');
     fetch(`${API_URL}/auth/login`, options)
       .then((res) => {
-        if (res.status === 200) {
+        if (res.status === 201) {
           setStatus('success');
-          dispatch(logIn({ login }));
-          setTimeout(() => {
-            navigate('/');
-          }, 3000);
+          return res.json();
         } else if (res.status === 400) {
           setStatus('clientError');
         } else {
           setStatus('serverError');
         }
+      })
+      .then((res) => {
+        dispatch(logIn(res));
+          setTimeout(() => {
+            navigate('/');
+          }, 3000);
       })
       .catch((err) => {
         setStatus('serverError');
@@ -79,8 +87,8 @@ const Login = () => {
             <Form.Label>Login</Form.Label>
             <Form.Control
               type='text'
-              value={login}
-              onChange={(e) => setLogin(e.target.value)}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               placeholder='Enter login'
             />
           </Form.Group>
