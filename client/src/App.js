@@ -13,6 +13,7 @@ import { addCart } from './redux/cartRedux';
 import ProductPage from './components/common/ProductPage/ProductPage'
 import OrderForm from "./components/features/OrderForm/OrderForm";
 import Summary from "./components/pages/Summary/Summary";
+import Logout from './components/pages/Logout/Logout';
 
 const App = () => {
   const [cartData, setcartData] = useState(
@@ -41,6 +42,7 @@ const App = () => {
           <Route path='/product/:id' element={<ProductPage />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='/login' element={<Login />} />
+          <Route path='/logout' element={<Logout />} />
           <Route path='/register' element={<Register />} />
           <Route path='/order' element={<OrderForm />} />
           <Route path='/summary' element={<Summary />} />
