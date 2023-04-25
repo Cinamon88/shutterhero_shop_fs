@@ -7,31 +7,13 @@ import Register from "./components/pages/Register/Register";
 import Login from "./components/pages/Login/Login";
 import NotFound from "./components/pages/NotFound/NotFound";
 import Cart from "./components/features/Cart/Cart";
-import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { addCart } from './redux/cartRedux';
 import ProductPage from './components/common/ProductPage/ProductPage'
 import OrderForm from "./components/features/OrderForm/OrderForm";
 import Summary from "./components/pages/Summary/Summary";
 import Logout from './components/pages/Logout/Logout';
 
+
 const App = () => {
-  const [cartData, setcartData] = useState(
-    JSON.parse(localStorage.getItem('cart')) || 0,
-  );
-  const [user, setUser] = useState(
-    JSON.parse(localStorage.getItem('user')) || 0,
-  );
-
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    if (cartData.length > 0) {
-      cartData.map((i) => {
-        dispatch(addCart(i));
-      });
-    }
-  }, [cartData]);
 
   return (
     <main>

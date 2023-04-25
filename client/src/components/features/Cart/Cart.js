@@ -5,20 +5,20 @@ import { getCart } from '../../../redux/cartRedux';
 import styles from './Cart.module.scss';
 import { TiDelete } from 'react-icons/ti';
 import { Link } from 'react-router-dom';
+import { getUser } from '../../../redux/usersRedux';
 
 const Cart = () => {
-  const [cartData, setCartData] = useState(useSelector(getCart));
-  // eslint-disable-next-line no-unused-vars
-  const [user, setUser] = useState(
-    JSON.parse(localStorage.getItem('user')) || 0,
-  );
 
+  const user = useSelector(getUser);
+  const [cartData, setCartData] = useState(useSelector(getCart));
+  
   const handleDelete = (id) => {
     let cart = JSON.parse(localStorage.getItem('cart'));
     let tempCart = cart.filter((item) => item.id !== id);
     localStorage.setItem('cart', JSON.stringify(tempCart));
     setCartData(tempCart);
   };
+
   function getTotalPrice() {
     let totalPrice = 0;
     // eslint-disable-next-line array-callback-return
@@ -27,6 +27,7 @@ const Cart = () => {
     });
     return totalPrice;
   }
+  
   return (
     <Container className={styles.cart}>
       <h1 className={styles.title}>Cart</h1>

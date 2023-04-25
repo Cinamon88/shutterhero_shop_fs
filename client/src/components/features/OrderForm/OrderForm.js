@@ -8,8 +8,11 @@ import { addOrder } from '../../../redux/orderRedux';
 import { useNavigate } from 'react-router-dom';
 import { FiChevronRight } from 'react-icons/fi';
 import styles from './OrderForm.module.scss';
+import { getUser } from '../../../redux/usersRedux';
 
 const OrderForm = () => {
+  const user = useSelector(getUser);
+
   const [name, setName] = useState();
   const [lastName, setLastName] = useState();
   const [address, setAddress] = useState();
@@ -19,9 +22,6 @@ const OrderForm = () => {
   const [totalPrice, setTotalPrice] = useState(getTotalPrice());
   const [deliveryCost, setDeliveryCost] = useState(0);
   const [status, setStatus] = useState();
-  const [user, setUser] = useState(
-    JSON.parse(localStorage.getItem('user')) || 0,
-  );
 
   const {
     register,
@@ -254,7 +254,7 @@ const OrderForm = () => {
         {status === 'success' && (
           <Alert variant="success" className="mt-3">
             <Alert.Heading>Success!</Alert.Heading>
-            <p>You have placed the order correctly</p>
+            <p>You have placed the order! Thank you!</p>
           </Alert>
         )}{' '}
         {status === 'error' && (
