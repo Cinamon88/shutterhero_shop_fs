@@ -13,7 +13,13 @@ import Summary from "./components/pages/Summary/Summary";
 import Logout from './components/pages/Logout/Logout';
 
 
+
 const App = () => {
+
+  const Data = () => {
+    localStorage.setItem("user", JSON.stringify("Lukasz"));
+  };
+
 
   return (
     <main>

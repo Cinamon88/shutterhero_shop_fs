@@ -8,6 +8,7 @@ import { useDispatch } from 'react-redux';
 import { API_URL } from '../../../config';
 import { logIn } from '../../../redux/usersRedux';
 import { useNavigate } from 'react-router-dom';
+import shortid from 'shortid';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -27,7 +28,7 @@ const Login = () => {
       credentials: 'include',
       body: JSON.stringify({ email, password }),
     };
-    
+
     setStatus('loading');
     fetch(`${API_URL}/auth/login`, options)
       .then((res) => {
@@ -40,11 +41,12 @@ const Login = () => {
           setStatus('serverError');
         }
       })
+      
       .then((res) => {
         dispatch(logIn(res));
-          setTimeout(() => {
-            navigate('/');
-          }, 3000);
+        setTimeout(() => {
+          navigate('/');
+        }, 3000);
       })
       .catch((err) => {
         setStatus('serverError');
@@ -54,7 +56,7 @@ const Login = () => {
   return (
     <Form className='col-12 col-sm-3 mx-auto mt-3' onSubmit={handleSubmit}>
       <h1 className='my-4'>Sign in</h1>
-    
+
       {status === 'success' && (
         <Alert variant='success'>
           <Alert.Heading>Success!</Alert.Heading>

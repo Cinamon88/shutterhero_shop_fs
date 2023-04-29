@@ -5,11 +5,14 @@ import { getCart } from '../../../redux/cartRedux';
 import styles from './Cart.module.scss';
 import { TiDelete } from 'react-icons/ti';
 import { Link } from 'react-router-dom';
-import { getUser } from '../../../redux/usersRedux';
+
 
 const Cart = () => {
 
-  const user = useSelector(getUser);
+  const user = useState(
+    JSON.parse(localStorage.getItem('user')) || 0,
+  );
+  
   const [cartData, setCartData] = useState(useSelector(getCart));
   
   const handleDelete = (id) => {

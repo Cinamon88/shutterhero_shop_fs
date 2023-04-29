@@ -2,6 +2,7 @@
 
 .root {
   background-color: $header-bg;
+  margin-top: 55px;
   
   :global(.container) > :global(.row) {
     height: 200px;
